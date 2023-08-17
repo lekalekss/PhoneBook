@@ -1,8 +1,4 @@
-﻿class Contact
-{
-}
-
-class Program
+﻿public class Program
 {
     static List<Contact> contacts = new List<Contact>();
 
