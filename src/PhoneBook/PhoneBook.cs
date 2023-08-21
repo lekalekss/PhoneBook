@@ -1,51 +1,94 @@
 namespace PhoneBook;
 
-public interface IPhoneBook
-{
-    void AddContact();
-    void ViewContacts();
-    void UpdateContact();
-    void DeleteContact();
-    void SearchContact();
-    void SaveBook();
-}
-
-public class PhoneBook : IPhoneBook
+public class PhoneBook
 {
     public PhoneBook(List<Contact> contacts)
     {
         Contacts = contacts;
     }
 
+    public PhoneBook()
+    {
+        Contacts = new List<Contact>();
+    }
     public List<Contact> Contacts { get; set; }
+    public IConsoleReader ConsoleReader = new ConsoleReader();
     
     public void AddContact()
     {
-        // Реализация добавления контакта
+       
+        //ConsoleReader.Write("Введите имя: ");
+        
+        
+        //ConsoleReader.Write("Введите фамилию: ");
+        
+        
+        //ConsoleReader.Write("Введите номер телефона: ");
+        
+        
+        //ConsoleReader.WriteLine("Контакт добавлен.");
+        
+        
     }
 
     public void ViewContacts()
     {
-        // Реализация просмотра контактов
+    
+            //ConsoleReader.WriteLine("Список контактов пуст.");
+       
+            
+            // ConsoleReader.WriteLine($"Имя: {contact.FirstName} Фамилия: {contact.LastName} Номер телефона: {contact.PhoneNumber}");
+        
     }
 
     public void UpdateContact()
     {
-        // Реализация обновления контакта
+       //ConsoleReader.Write("Введите номер телефона контакта, который хотите обновить: ");
+
+        //ConsoleReader.WriteLine("Контакт с таким номером телефона не найден.");
+
+        //ConsoleReader.Write("Введите новое имя: ");
+        
+        //ConsoleReader.Write("Введите новую фамилию: ");
+        
+        //ConsoleReader.WriteLine("Контакт обновлен.");
     }
 
     public void DeleteContact()
     {
-        // Реализация удаления контакта
+        //ConsoleReader.Write("Введите номер телефона контакта, который хотите удалить: ");
+       
+        //ConsoleReader.WriteLine("Контакт с таким номером телефона не найден.");
+       
+        //ConsoleReader.WriteLine("Контакт удален.");
     }
 
     public void SearchContact()
     {
-        // Реализация поиска контакта
+        //ConsoleReader.Write("Введите имя или номер телефона для поиска: ");
+       
+        //ConsoleReader.WriteLine("Контакты не найдены.");
+       
+        //ConsoleReader.WriteLine($"Имя: {contact.FirstName} Фамилия: {contact.LastName} Номер телефона: {contact.PhoneNumber}");
+        
     }
 
     public void SaveBook()
     {
-        // Реализация сохранения книги в текстовый файл (бонусное задание)
+        using (StreamWriter writer = new StreamWriter("contacts.txt"))
+        {
+            foreach (Contact contact in Contacts)
+            {
+                writer.WriteLine($"{contact.FirstName},{contact.LastName},{contact.PhoneNumber}");
+            }
+        }
+
+        ConsoleReader.WriteLine("Книга сохранена.");
+    }
+
+    public void LoadBook()
+    {
+        // Дополнительное задание
+        // загрузка контактов из файла contacts.txt
     }
 }

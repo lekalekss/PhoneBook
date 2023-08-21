@@ -1,9 +1,14 @@
-﻿public class Program
-{
-    static List<Contact> contacts = new List<Contact>();
+﻿using System.Text;
 
+public class Program
+{
+    private static PhoneBook.PhoneBook _phoneBook;
+    
     static void Main(string[] args)
     {
+        _phoneBook = new PhoneBook.PhoneBook();
+        
+        Console.OutputEncoding = Encoding.UTF8;
         bool isRunning = true;
         while (isRunning)
         {
@@ -20,22 +25,22 @@
             switch (choice)
             {
                 case 1:
-                    AddContact();
+                    _phoneBook.AddContact();
                     break;
                 case 2:
-                    ViewContacts();
+                    _phoneBook.ViewContacts();
                     break;
                 case 3:
-                    UpdateContact();
+                    _phoneBook.UpdateContact();
                     break;
                 case 4:
-                    DeleteContact();
+                    _phoneBook.DeleteContact();
                     break;
                 case 5:
-                    SearchContact();
+                    _phoneBook.SearchContact();
                     break;
                 case 6:
-                    SaveBook();
+                    _phoneBook.SaveBook();
                     break;
                 case 7:
                     isRunning = false;
@@ -45,35 +50,5 @@
                     break;
             }
         }
-    }
-
-    static void AddContact()
-    {
-        // Реализация добавления контакта
-    }
-
-    static void ViewContacts()
-    {
-        // Реализация просмотра контактов
-    }
-
-    static void UpdateContact()
-    {
-        // Реализация обновления контакта
-    }
-
-    static void DeleteContact()
-    {
-        // Реализация удаления контакта
-    }
-
-    static void SearchContact()
-    {
-        // Реализация поиска контакта
-    }
-
-    static void SaveBook()
-    {
-        // Реализация сохранения книги в текстовый файл (бонусное задание)
     }
 }
