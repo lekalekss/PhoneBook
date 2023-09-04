@@ -50,7 +50,7 @@ namespace PhoneBook.Tests
 
             _mockConsoleReader.Invocations.Clear();
             _sut.ViewContacts();
-            string expectedOutput = $"Имя: {_firstName} Фамилия: {_lastName} Номер телефона: {_phoneNumber}";
+            string expectedOutput = "Имя: " + _firstName + " Фамилия: " + _lastName + " Номер телефона: " + _phoneNumber;
             _mockConsoleReader.Verify(c => c.WriteLine(It.Is<string>(str => str.Contains(expectedOutput))),Times.Exactly(1));
 
         }
