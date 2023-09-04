@@ -37,7 +37,7 @@ public class PhoneBook
             //ConsoleReader.WriteLine("Список контактов пуст.");
        
             
-            // ConsoleReader.WriteLine($"Имя: {contact.FirstName} Фамилия: {contact.LastName} Номер телефона: {contact.PhoneNumber}");
+            //ConsoleReader.WriteLine("Имя: " + contact.FirstName + " Фамилия: " + contact.LastName + " Номер телефона: " + contact.PhoneNumber);
         
     }
 
@@ -69,7 +69,7 @@ public class PhoneBook
        
         //ConsoleReader.WriteLine("Контакты не найдены.");
        
-        //ConsoleReader.WriteLine($"Имя: {contact.FirstName} Фамилия: {contact.LastName} Номер телефона: {contact.PhoneNumber}");
+        //ConsoleReader.WriteLine("Имя: " + contact.FirstName + " Фамилия: " + contact.LastName + " Номер телефона: " + contact.PhoneNumber);
         
     }
 
@@ -79,7 +79,7 @@ public class PhoneBook
         {
             foreach (Contact contact in Contacts)
             {
-                writer.WriteLine($"{contact.FirstName},{contact.LastName},{contact.PhoneNumber}");
+                writer.WriteLine(contact.FirstName+ "," +contact.LastName + "," + contact.PhoneNumber);
             }
         }
 
